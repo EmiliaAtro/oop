@@ -1,0 +1,125 @@
+int a = 5;
+Console.WriteLine(a);
+
+long long1 = 3838456859302;
+Console.WriteLine(long1);
+
+byte byte1 = 255;
+Console.WriteLine(byte1);
+sbyte sbyte1 = -128;
+Console.WriteLine(sbyte1);
+
+short short1 = 6789;
+Console.WriteLine(short1);
+decimal b = 2.1m;
+Console.WriteLine(b);
+float float1 = 3.14159265F;
+Console.WriteLine(float1);
+double double1 = 1.618033988749895;
+Console.WriteLine(double1);
+decimal decimal1 = 1.234567890123456789M;
+Console.WriteLine(decimal1);
+
+bool bool1 = true;
+bool bool2 = false;
+Console.WriteLine(bool1);
+Console.WriteLine(bool2);
+
+char char1 = 'a';
+Console.WriteLine(char1);
+
+string string1 = "Hello, world!";
+Console.WriteLine(string1);
+
+//явное преобразование
+double d = 9.9999;
+int i = (int)d;
+Console.WriteLine(i);
+
+long l = 5000L;
+int p = (int)l;
+Console.WriteLine(p);
+
+int s = 100;
+byte x = (byte)s;
+Console.WriteLine(x);
+
+float g = 7.904837F;
+double f = (double)g;
+Console.WriteLine(f);
+
+char w = 'j';
+decimal j = (decimal)w;
+Console.WriteLine(j);
+
+//неявное преобразование
+int e = 89;
+double h = e;
+Console.WriteLine(h);
+
+char c = 'A';
+int y = c;
+Console.WriteLine(y);
+
+byte r = 155;
+int k = r;
+Console.WriteLine(k);
+
+string strValue = "129";
+int intValue = Convert.ToInt32(strValue);
+Console.WriteLine(intValue);
+
+bool bl = true;
+string blstr = Convert.ToString(bl);
+Console.WriteLine(blstr);
+
+//упаковка
+int q = 567;
+object obj = q;
+Console.WriteLine(obj);
+//распаковка
+obj = 567;
+q = (int)obj;
+Console.WriteLine(obj);
+//double
+//упаковка
+double db = 57.89;
+object obj2 = db;
+Console.WriteLine(obj2);
+//распаковка
+obj2 = 57.89;
+db = (double)obj2;
+Console.WriteLine(obj2);
+
+//упаковка
+bool boolv = true;
+object obj3 = boolv;
+Console.WriteLine(obj3);
+//распаковка
+obj3 = true;
+boolv = (bool)obj3;
+Console.WriteLine(obj3);
+
+//неявно типизированная переменная
+var message = "Hello, world!";
+Console.WriteLine(message);
+
+var number = 679;
+Console.WriteLine(number);
+
+var isTrue = true;
+Console.WriteLine(isTrue);
+
+//с Nullable переменной
+int? age = null;
+age = 25;
+
+// Проверка на null значение
+if (age.HasValue)
+{
+    Console.WriteLine("Возраст: " + age.Value);
+}
+else
+{
+    Console.WriteLine("Возраст не задан.");
+}
