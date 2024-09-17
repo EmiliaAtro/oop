@@ -1,0 +1,51 @@
+using System;
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        int[] numbers = { 10, 5, 20, 15, 30 };
+        string text = "Hello";
+
+        // Вызываем локальную функцию и получаем результат
+        (int max, int min, int sum, char firstLetter) = ProcessData(numbers, text);
+
+        // Выводим результат
+        Console.WriteLine($"Максимальный элемент: {max}");
+        Console.WriteLine($"Минимальный элемент: {min}");
+        Console.WriteLine($"Сумма элементов: {sum}");
+        Console.WriteLine($"Первая буква строки: {firstLetter}");
+
+        // Локальная функция
+        (int, int, int, char) ProcessData(int[] arr, string str)
+        {
+            // Находим максимальный и минимальный элементы
+            int max = arr[0];
+            int min = arr[0];
+            foreach (int num in arr)
+            {
+                if (num > max)
+                {
+                    max = num;
+                }
+                if (num < min)
+                {
+                    min = num;
+                }
+            }
+
+            // Вычисляем сумму элементов массива
+            int sum = 0;
+            foreach (int num in arr)
+            {
+                sum += num;
+            }
+
+            // Получаем первую букву строки
+            char firstLetter = str[0];
+
+            // Возвращаем кортеж
+            return (max, min, sum, firstLetter);
+        }
+    }
+}
