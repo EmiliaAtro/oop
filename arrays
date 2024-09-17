@@ -1,0 +1,113 @@
+using System;
+using System.Collections;
+
+class Program
+{
+    static void Main()
+    {
+        // пункт a
+        int rows = 3;
+        int cols = 4;
+
+
+        int[,] matrix = new int[rows, cols];
+        Random rand = new Random();
+
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < cols; j++)
+            {
+                matrix[i, j] = rand.Next(1, 10);
+            }
+        }
+
+
+        Console.WriteLine("Матрица:");
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < cols; j++)
+            {
+                Console.Write($"{matrix[i, j],4}"); // Ширина 4 для выравнивания
+            }
+            Console.WriteLine();
+        }
+
+        // пункт b
+        string[] array = { "Один", "Два", "Три", "Четыре", "Пять" };
+
+        // Выводим содержимое массива и его длину
+        Console.WriteLine("Содержимое массива:");
+        foreach (var item in array)
+        {
+            Console.WriteLine(item);
+        }
+        Console.WriteLine($"Длина массива: {array.Length}");
+
+        // Запрашиваем у пользователя позицию и новое значение для изменения элемента
+        Console.WriteLine("\nВведите индекс элемента для изменения (от 0 до {0}):", array.Length - 1);
+        int index = int.Parse(Console.ReadLine());
+
+        if (index >= 0 && index < array.Length)
+        {
+            Console.WriteLine("Введите новое значение:");
+            string newValue = Console.ReadLine();
+            array[index] = newValue;
+
+            // Выводим измененное содержимое массива
+            Console.WriteLine("\nИзмененное содержимое массива:");
+            foreach (var item in array)
+            {
+                Console.WriteLine(item);
+            }
+        }
+        else
+        {
+            Console.WriteLine("Введен некорректный индекс.");
+        }
+        //пункт c
+        double[][] myArray = new double[3][];
+        myArray[0] = new double[2]; 
+        myArray[1] = new double[3]; 
+        myArray[2] = new double[4]; 
+
+        // Заполняем массив значениями с консоли
+        for (int i = 0; i < myArray.Length; i++)
+        {
+            Console.WriteLine($"Введите значения для строки {i + 1} (всего {myArray[i].Length} значений):");
+            for (int j = 0; j < myArray[i].Length; j++)
+            {
+                Console.Write($"Элемент [{i}, {j}]: ");
+                myArray[i][j] = double.Parse(Console.ReadLine());
+            }
+        }
+
+        // Выводим содержимое ступенчатого массива
+        Console.WriteLine("\nСодержимое ступенчатого массива:");
+        for (int i = 0; i < myArray.Length; i++)
+        {
+            Console.Write($"Строка {i + 1}: ");
+            for (int j = 0; j < myArray[i].Length; j++)
+            {
+                Console.Write($"{myArray[i][j]} ");
+            }
+            Console.WriteLine();
+
+        }
+        //пункт d
+        var intArray = new[] { 1, 2, 3, 4, 5 };
+
+        // неявно типизированную переменную для строки
+        var message = "Привет, мир!";
+
+        Console.WriteLine("Массив целых чисел:");
+        foreach (var num in intArray)
+        {
+            Console.Write(num + " ");
+        }
+        Console.WriteLine();
+
+        Console.WriteLine("Сообщение:");
+        Console.WriteLine(message);
+
+    }
+}
