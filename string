@@ -1,0 +1,67 @@
+// пункт а
+using System.Text;
+
+string literal1 = "Hello, world!";
+string literal2 = "Hello, world!";
+string literal3 = @"Hello, world!";
+// Сравнение литералов
+Console.WriteLine($"literal1 == literal2: {literal1 == literal2}"); // true
+Console.WriteLine($"literal1 == literal3: {literal1 == literal3}"); // true
+
+// пункт b
+string str1 = "Hello, ";
+string str2 = "my name ";
+string str3 = "is Emma.";
+
+// Сцепление
+string a = str1 + str2 + str3;
+Console.WriteLine(a); 
+
+// Копирование
+string copy = str3;
+Console.WriteLine(copy); 
+
+// Выделение подстроки
+string sub = str3.Substring(3, 5);
+Console.WriteLine(sub);
+
+// Разделение строки на слова
+string[] words = str3.Split(' ');
+Console.WriteLine(string.Join(", ", words)); 
+
+// Вставка подстроки в заданную позицию
+string insert = str2.Insert(7, str3);
+Console.WriteLine(insert); 
+
+// Удаление заданной подстроки
+string remove = str3.Remove(3, 5);
+Console.WriteLine(remove);
+
+// Интерполяция строк
+string message = $"{str1}{str2}{str3}";
+Console.WriteLine(message);
+
+
+// Пункт с
+string name = "";
+string str = null;
+bool bIsEmpty = String.IsNullOrEmpty(name);
+
+// Длина строки null 
+Console.WriteLine(name.Length); 
+
+// Сравнение пустой строки с null-строкой
+Console.WriteLine(name == str);
+// Соединение пустой строки с другой строкой
+string f = name + "Hello";
+Console.WriteLine(f);
+
+// пункт d
+StringBuilder sb = new StringBuilder("My name is Emma");
+
+sb.Remove(0, 10);
+sb.Insert(0, "Hello, ");
+sb.Append("!");
+
+string resultString = sb.ToString();
+Console.WriteLine(resultString); 
