@@ -1,0 +1,62 @@
+using System;
+using System.Runtime.CompilerServices;
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        // Пункт a
+        (int, string, char, string, ulong) tup = (13, "Hey", 'D', "World", 123456788123456789);
+
+
+        Console.WriteLine($"int: {tup.Item1}");
+        Console.WriteLine($"string: {tup.Item2}");
+        Console.WriteLine($"char: {tup.Item3}");
+        Console.WriteLine($"string: {tup.Item4}");
+        Console.WriteLine($"ulong: {tup.Item5}");
+        // Пункт b
+        Console.WriteLine($"Кортеж целиком: {tup}");
+        Console.WriteLine($"1 элемент: {tup.Item1}");
+        Console.WriteLine($"3 элемент: {tup.Item3}");
+        Console.WriteLine($"4 элемент: {tup.Item4}");
+
+
+
+        // Пункт c
+        // Распаковка с помощью именованных переменных
+        (int number, string greeting, char letter, string word, ulong bigNumber) = tup;
+        Console.WriteLine($"number: {number}, greeting: {greeting}, letter: {letter}, word: {word}, bigNumber: {bigNumber}");
+
+        // Распаковка с помощью позиционных переменных
+        int number2 = tup.Item1;
+        string greeting2 = tup.Item2;
+        char letter2 = tup.Item3;
+        string word2 = tup.Item4;
+        ulong bigNumber2 = tup.Item5;
+        Console.WriteLine($"number2: {number2}, greeting2: {greeting2}, letter2: {letter2}, word2: {word2}, bigNumber2: {bigNumber2}");
+
+        // Распаковка с помощью деструктурирующего присваивания 
+        var (number3, greeting3, letter3, word3, bigNumber3) = tup;
+        Console.WriteLine($"number3: {number3}, greeting3: {greeting3}, letter3: {letter3}, word3: {word3}, bigNumber3: {bigNumber3}");
+
+        // Пункт d
+        (int, string, char) tuple1 = (13, "Hey", 'S');
+        (int, string, char) tuple2 = (13, "Hey", 'S');
+        (int, string, char) tuple3 = (15, "World", 'D');
+        Console.WriteLine(tuple1 == tuple2);
+        Console.WriteLine(tuple1 == tuple3);
+
+        // Сравнение элементов кортежа
+        if (tuple1.Item1 == tuple2.Item1 &&
+            tuple1.Item2 == tuple2.Item2 &&
+            tuple1.Item3 == tuple2.Item3)
+        {
+            Console.WriteLine("Все элементы кортежей tuple1 и tuple2 равны");
+        }
+        else
+        {
+            Console.WriteLine("Элементы кортежей tuple1 и tuple2 не равны");
+        }
+    }
+}
+   
