@@ -1,0 +1,33 @@
+using System;
+
+internal class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Результат checked:");
+        CheckedFunction();
+        Console.WriteLine("Результат unchecked");
+        UncheckedFunction();
+        
+    }
+    static void CheckedFunction()
+    {
+        try
+        {
+            int maxInt = int.MaxValue;
+
+            int result = checked(maxInt + 1);
+            Console.WriteLine("Результат (checked): " + result);
+        }
+        catch (OverflowException ex)
+        {
+            Console.WriteLine("Переполнение произошло: " + ex.Message);
+        }
+    }
+    static void UncheckedFunction()
+    {
+        int maxInt = int.MaxValue;
+        int result = unchecked(maxInt + 1);
+        Console.WriteLine("Результат (unchecked): " + result);
+    }
+}
